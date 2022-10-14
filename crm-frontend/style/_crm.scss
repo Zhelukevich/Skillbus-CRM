@@ -1,0 +1,976 @@
+@import '_variable';
+
+
+// .btn {
+//   padding: 2px;
+//   border: 0;
+//   border-radius: 0;
+//   color: inherit;
+//   background: transparent;
+//   cursor: pointer;
+// }
+
+// .btn:focus-visible {
+//   outline: 1px solid rgba(51, 51, 51, 0.5);
+// }
+
+.input:focus-visible {
+  outline: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+/* Header */
+.header {
+  width: 100%;
+  height: 90px;
+  margin-bottom: 40px;
+  background: $white;
+  box-shadow: 0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32), 0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    max-width: 1366px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header__logo {
+    margin-right: 53px;
+  }
+
+  .search-form {
+    position: relative;
+
+    .search-form__input {
+      padding-left: 15px;
+      width: 581px;
+      height: 44px;
+      border: 1px solid rgba(51, 51, 51, 0.2);
+    }
+
+    .search-form__input::placeholder {
+      font-size: 14px;
+      color: $dark-gray;
+    }
+
+    .search__list {
+      position: absolute;
+      z-index: 999;
+      top: 45px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $white-smoke;
+
+      .search__items {
+        display: inline-block;
+        padding-left: 20px;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        color: $dark-gray;
+        background-color: $white;
+      }
+
+      .search__items:hover {
+        background-color: $white-smoke;
+      }
+
+      .search__items_focused {
+        background-color: $white-smoke;
+      }
+    }
+
+  }
+}
+
+/* --- */
+
+/* clientele*/
+.clientele__title {
+  margin-bottom: 18px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: $night-rider;
+}
+
+.clientele__container {
+  position: relative;
+  min-height: 373px;
+}
+
+.table {
+  position: relative;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  z-index: 5;
+}
+
+.table-head__row {
+  height: 33px;
+
+  .table-head__cells {
+    padding: 0 20px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $dark-gray;
+  }
+}
+
+
+
+.table-head_id,
+.table-head_fullname,
+.table-head_createdate,
+.table-head_updatedate {
+  cursor: pointer;
+}
+
+.head-id__title {
+  color: $dark-gray;
+  transition: color 0.3s ease-in-out;
+}
+
+.head-fullname__title,
+.head-createdate__title,
+.head-updatedate__title {
+  transition: color 0.3s ease-in-out;
+}
+
+.table-head_id:hover .head-id__title,
+.table-head_fullname:hover .head-fullname__title,
+.table-head_createdate:hover .head-createdate__title,
+.table-head_updatedate:hover .head-updatedate__title {
+  color: $night-rider;
+}
+
+.color_light-slate-blue {
+  color: $light-slate-blue;
+}
+
+.table-head__icon {
+  display: inline-block;
+  margin-bottom: -2px;
+  width: 12px;
+  height: 12px;
+  background-image: url(../img/arrow_sort.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate_180 {
+  transform: rotate(180deg);
+}
+
+.head-fullname__descr {
+  align-items: center;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  color: $light-slate-blue;
+}
+
+
+.table-body {
+  position: absolute;
+  top: 33px;
+  width: 100%;
+  height: 300px;
+  background-color: $white;
+  z-index: 1;
+}
+
+.table-body__overlay {
+  /* Оверлей для загрузки данных в таблицу */
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: $white;
+}
+
+.table-body__ring {
+  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+  background-image: url(../img/ring.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: ring-spin $speed-ring infinite linear;
+}
+
+@keyframes ring-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.data-table {
+  background-color: $white;
+
+  .table__row {
+    height: 60px;
+    border-bottom: 1px solid rgba($color: #C8C5D1, $alpha: .5);
+
+    .row__cells {
+      padding: 0 20px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: $night-rider;
+
+    }
+
+    .body-cells_id {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: $dark-gray;
+    }
+  }
+}
+
+
+.cell-create__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cell-update__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cell-create__date,
+.cell-update__date {
+  padding-right: 7px;
+}
+
+.cell-create__time,
+.cell-update__time {
+  color: $dark-gray;
+}
+
+.contacts__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 9px 24px 5px 0;
+  height: 100%;
+}
+
+.contacts__item {
+  position: relative;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.contacts__icon {
+  width: 16px;
+  height: 16px;
+  fill: $light-slate-blue;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.contacts__icon:hover {
+  opacity: 1;
+}
+
+.contacts__icon_ring {
+  display: inline-block;
+  margin-bottom: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border: 1px solid $light-slate-blue;
+  text-align: center;
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 14px;
+  color: $night-rider;
+}
+
+
+/* Всплывающая подсказка */
+.tooltip {
+  position: fixed;
+  padding: 7px 14px;
+  background-color: $night-rider;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 500;
+}
+
+.tooltip__title {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $white;
+}
+
+.tooltip__value {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: $white;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: calc(50% - 5px);
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 9px solid $night-rider;
+}
+
+/* --- */
+
+.actions__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.edit-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 26px;
+  transition: color 0.3s ease-in-out;
+}
+
+.edit-btn:hover,
+.edit-btn:active {
+  color: $light-slate-blue;
+}
+
+.actions-btn__icon {
+  display: block;
+  margin-right: 1px;
+  width: 16px;
+  height: 16px;
+}
+
+.edit-btn__icon {
+  background-image: url(../img/edit.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.load__icon {
+  display: block;
+  margin-right: 2px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/ring_small.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: ring-spin $speed-ring infinite linear;
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
+}
+
+.delete-btn:hover,
+.delete-btn:active {
+  color: $burnt-sienna;
+}
+
+.delete-btn__icon {
+  background-image: url(../img/delete.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.delete-load__icon {
+  stroke: $burnt-sienna;
+}
+
+/* Кнопка добавить клиента */
+.add-client__btn {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 216px;
+  height: 44px;
+  margin: 0 auto 40px;
+  border: 1px solid $light-slate-blue;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $light-slate-blue;
+
+  .clientele__add-icon {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: $hover;
+    color: $white;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+
+    path {
+      fill: $white;
+      transition: fill 0.3s ease-in-out;
+    }
+  }
+
+  &:active {
+    background: $medium-slate-blue;
+    color: $white;
+
+    path {
+      fill: $white;
+      transition: fill 0.3s ease-in-out;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: none;
+    border: 1px solid $ghost;
+    color: $ghost;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+
+    path {
+      fill: $ghost;
+      transition: fill 0.3s ease-in-out;
+    }
+  }
+
+}
+
+/* Модальные окна */
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease-in-out, visibility 0s ease-in-out 0.3s;
+}
+
+.modal::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.modal__wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 450px;
+  vertical-align: middle;
+  text-align: left;
+  background: $white;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
+  white-space: normal;
+  cursor: default;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 21px;
+  height: 21px;
+  background-image: url(../img/close.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.modal__header {
+  margin-bottom: 16px;
+}
+
+.modal__container {
+  padding: 0 30px;
+}
+
+.modal-header__heading {
+  display: inline-block;
+  margin-right: 5px;
+  padding-top: 24px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: $night-rider;
+}
+
+.modal-header__id {
+  font-size: 12px;
+  line-height: 16px;
+  color: $dark-gray;
+}
+
+.fieldset_reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.modal-contaiter_position_flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-fullname {
+  padding-bottom: 9px;
+}
+
+/* Добавил */
+.inputs__wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  width: 390px;
+  height: 36px;
+  border-bottom: 1px solid rgba(200, 197, 209, 0.5);
+}
+
+.modal__intup {
+  z-index: 10;
+  border: none;
+  height: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $night-rider;
+  background: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.modal__lable {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  padding: 0 2px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #B0B0B0;
+  transition-property: top, font-size, line-height;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.lable_asterix {
+  color: $light-slate-blue;
+}
+
+.modal__lable_up {
+  top: 0;
+  bottom: initial;
+  margin-bottom: 2px;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.modal__intup:focus {
+  outline: none;
+}
+
+.modal__intup_error:focus {
+  border-bottom: 1px solid rgba(240, 106, 77, 0.5);
+}
+
+
+.modal-contacts {
+  display: block;
+  background-color: rgba(200, 197, 209, 0.2);
+}
+
+.modal-contacts_padding {
+  padding: 24px 0 16px 0;
+}
+
+.modal-contacts_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-contacts__item {
+  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.contacts-type {
+  position: relative;
+}
+
+.contact-type__button {
+  position: relative;
+  display: block;
+  padding: 0 12px;
+  border: 1px solid $ghost;
+  width: 123px;
+  height: 38px;
+  text-align: left;
+  font-size: 12px;
+  line-height: 16px;
+  color: $night-rider;
+  cursor: pointer;
+  background-color: $white-lilac;
+}
+
+.contact-type__button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  display: block;
+  border-width: 0 0 2px 2px;
+  border-color: #9873FF;
+  border-style: solid;
+  width: $tringle-size;
+  height: $tringle-size;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(-45deg);
+  /* Вместе с top: 50% вырвнивает по вертикали */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Чтобы перевернуть псевдоэлемент присвоить класс .contact-type__button_rotate*/
+.contact-type__button_rotate::after {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+/* Выпадающий список */
+.contact-type__list {
+  position: absolute;
+  z-index: 1000;
+  top: 37px;
+  left: 0;
+  display: none;
+  border: 1px solid $ghost;
+  width: 100%;
+  overflow: hidden;
+  background-color: $magnolia;
+  list-style: none;
+}
+
+.contact-type__list_visible {
+  display: block;
+}
+
+.contact-type__item {
+  padding: 8px 0 8px 12px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $night-rider;
+}
+
+.contact-type__item:hover {
+  cursor: pointer;
+  background-color: $white-lilac;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* --- */
+
+.contact-value {
+  padding: 0;
+  padding-left: 12px;
+  border: 0;
+  border-top: 1px solid $ghost;
+  border-bottom: 1px solid $ghost;
+  border-radius: 0;
+  width: 100%;
+  height: 38px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $night-rider;
+  background-color: rgba(200, 197, 209, 0.2);
+}
+
+.contact-value::placeholder {
+  font-size: 14px;
+  line-height: 19px;
+  color: $dark-gray;
+}
+
+.contact-value:focus-visible {
+  outline: 0;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+.contact-value:focus {
+  border: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+.contact-value_border-right {
+  border-right: 1px solid $ghost;
+}
+
+.delete-contact__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $ghost;
+  border-radius: 0;
+  border-left: transparent;
+  width: 38px;
+  height: 38px;
+  background-color: $white-lilac;
+  transition: border 0.3s ease-in-out;
+}
+
+.delete-contact__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/delete_gray.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.delete-contact__btn:hover {
+  border: none;
+  border: 1px solid $burnt-sienna;
+}
+
+.delete-contact__btn:hover .delete-contact__icon {
+  background-image: url(../img/delete.svg);
+}
+
+.delete-contact__btn:focus {
+  border: none;
+  outline: none;
+  border: 1px solid $burnt-sienna;
+}
+
+.delete-contact__btn:focus .delete-contact__icon {
+  background-image: url(../img/delete.svg);
+}
+
+.modal-addcontact__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 8px 0;
+  cursor: default;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-addcontact__icon {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/add_contact.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.modal-addcontact__title {
+  display: inline-block;
+  padding: 0 5.5px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $night-rider;
+  transition: color 0.3s ease-in-out;
+}
+
+.modal-addcontact__btn:hover .modal-addcontact__title {
+  color: $light-slate-blue;
+}
+
+.modal-addcontact__btn:hover .modal-addcontact__icon {
+  background-image: url(../img/add_contact_hover.svg);
+}
+
+.modal-addcontact__btn:focus .modal-addcontact__title {
+  color: $light-slate-blue;
+}
+
+.modal-addcontact__btn:focus .modal-addcontact__icon {
+  background-image: url(../img/add_contact_hover.svg);
+}
+
+.modal-error__text {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 9px;
+  width: 255px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 14px;
+  color: $burnt-sienna;
+}
+
+.modal-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-btn {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 12.5px 0;
+  width: 147px;
+  background-color: $light-slate-blue;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: $perfume;
+}
+
+.submit-btn:focus {
+  outline: none;
+  background-color: $perfume;
+}
+
+.submit-btn:active {
+  background-color: $medium-slate-blue;
+}
+
+.submit-btn:disabled {
+  background-color: $ghost;
+}
+
+.submit-btn__icon {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  visibility: hidden;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/ring_small-white.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  animation: ring-spin $speed-ring infinite linear;
+}
+
+.submit-btn__title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $white;
+}
+
+.modal-delete-btn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  padding: 1px;
+  width: 112px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $night-rider;
+  text-decoration-line: underline;
+  transition: color 0.3s ease-in-out;
+}
+
+.modal-delete-btn:hover {
+  color: $burnt-sienna;
+}
+
+.modal-delete-btn:focus {
+  color: $burnt-sienna;
+}
+
+.modal-header-margin-bottom {
+  margin-bottom: 11px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.modal-header__heading-padding-top {
+  padding-top: 22px;
+}
+
+.modal-error__text-style {
+  margin-bottom: 25px;
+  width: 275px;
+  font-size: 14px;
+  line-height: 19px;
+  color: $night-rider;
+}
+
+.color_light-slate-blue {
+  color: $light-slate-blue;
+}
+
+.border-color_burnt-sienna {
+  border-color: rgba(240, 106, 77, 0.5);
+}
+
+/* --- */
+
+.blocked {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0s;
+}
+
+/* Для подсветки в таблице найденого клиента */
+.outline_medium-slate-blue {
+  outline: 1px solid $medium-slate-blue;
+}
+
+.upload_visible {
+  visibility: visible;
+  opacity: 1;
+}

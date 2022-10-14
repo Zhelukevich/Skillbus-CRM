@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skillbus – CRM</title>
+  <link rel="shortcut icon" href="img/logo.svg">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-600.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-700.woff2" as="font">
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <img class="header__logo" src="./img/logo.svg" alt="Логотип Slb">
+      <form class="search-form" action="#">
+        <input class="input search-form__input" type="text" placeholder="Введите запрос" disabled="">
+      </form>
+    </div>
+  </header>
+  <main class="main">
+    <section class="clientele">
+      <div class="container">
+        <h1 class="clientele__title">Клиенты</h1>
+
+        <div class="clientele__container">
+          <table class="table">
+            <thead>
+              <tr class="table-head__row">
+                <th class="table-head__cells table-head_id table__column_sort" id="id"><span
+                    class="head-id__title">ID</span><span class="table-head__icon"></span>
+                </th>
+                <th class="table-head__cells table-head_fullname table__column_sort" id="fullname"><span
+                    class="head-fullname__title">Фамилия Имя Отчество</span><span
+                    class="table-head__icon rotate_180"></span><span class="head-fullname__descr">А-Я</span>
+                </th>
+                <th class="table-head__cells table-head_createdate table__column_sort" id="createdAt"><span
+                    class="head-createdate__title">Дата и время создания</span><span
+                    class="table-head__icon rotate_180"></span>
+                </th>
+                <th class="table-head__cells table-head_updatedate table__column_sort" id="updatedAt"><span
+                    class="head-updatedate__title">Последние изменения</span><span
+                    class="table-head__icon rotate_180"></span>
+                </th>
+                <th class="table-head__cells" id="contacts">Контакты</th>
+                <th class="table-head__cells table-head_actions" id="actions">Действия</th>
+              </tr>
+            </thead>
+            <tbody class="data-table"></tbody>
+          </table>
+
+          <div class="table-body">
+            <div class="table-body__overlay">
+              <div class="table-body__ring"></div>
+            </div>
+          </div>
+        </div>
+        <button class="add-client__btn">
+          <svg class="clientele__add-icon" width="23" height="16" viewBox="0 0 23 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z"
+              fill="#9873FF" />
+          </svg>
+          Добавить клиента
+        </button>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>
